@@ -11,7 +11,7 @@ https://www.cdc.gov/coronavirus/2019-ncov/modules/transmission/variant-cases.jso
 
 Note there have been at least three URLs for this data. The data is getting more stable, but it's problematic.
 
-Some sample code to parse:
+Some sample code for parsing the JSON:
 
     import simplejson as json
     
