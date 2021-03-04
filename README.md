@@ -3,7 +3,11 @@
 
 This repository of state-level COVID-19 / coronavirus variants  contains data originally sourced from the Centers for Disease Control and Prevention. A few of the earlier files were pulled through the Wayback Machine. A few of the earlier files were altered to make them easier to parse.
 
-This data is not yet automatically updating.
+If everything works and the CDC has not broken the parser, this data should update within 30 minutes of a CDC change.
+
+**!combined.csv** and **combined.json** should be automatically updated if the CDC hasn't broken the USA TODAY parser implementation. You may be able to build around Github-hosted files using the "raw" view such as https://raw.githubusercontent.com/USATODAY/covid-variants/master/combined.json ... 
+
+Per MIT license, no warranty is implied.
 
 The CDC's release schedule has changed several times; the promised time of updates has often been ignored. The CDC's source page for this data is available at:
 https://www.cdc.gov/coronavirus/2019-ncov/transmission/variant-cases.html
