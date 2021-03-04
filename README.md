@@ -3,7 +3,9 @@
 
 This repository of state-level COVID-19 / coronavirus variants  contains data originally sourced from the Centers for Disease Control and Prevention. A few of the earlier files were pulled through the Wayback Machine. A few of the earlier files were altered to make them easier to parse.
 
-This data should update within half an hour of the CDC issuing an update. The release schedule has changed several times; the promised time of updates has often been ignored. The CDC's source page for this data is available at:
+This data is not yet automatically updating.
+
+The CDC's release schedule has changed several times; the promised time of updates has often been ignored. The CDC's source page for this data is available at:
 https://www.cdc.gov/coronavirus/2019-ncov/transmission/variant-cases.html
 
 The data has been appearing most recently at:
