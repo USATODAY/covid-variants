@@ -68,8 +68,10 @@ Some sample code for parsing the JSON:
     
     # Now, start parsing
     masterdict = {}
+    filedatelist = []
     for jsonfile in jsonfiles:
         filedate = jsonfile[-15:][:-5]
+        filedatelist.append(filedate)
         with open(jsonfile, "r") as infile:
             localdata = json.load(infile)['data']
             for entry in localdata:
@@ -102,12 +104,25 @@ Some sample code for parsing the JSON:
                         if line[goodvariant] > masterdict[state][filedate][goodvariant]:
                             masterdict[state][filedate][goodvariant] = line[goodvariant]
                 
-    
-    # Second D.C. hack. There was no geo entry for D.C., so let's take one.
-    for mydate in masterdict['AS']:
-        if mydate <= "2021-02-19" and mydate not in masterdict['DC']:
-            masterdict['DC'][mydate] = masterdict['AS'][mydate]
-            masterdict['DC'][mydate]['State'] = "DC"
+	    
+    # Revised D.C. hack. We may be missing some of the earliest geo entries, so let's fake them all.
+    for state in masterdict:
+        localfails = []
+        for filedate in filedatelist:
+            if filedate not in masterdict[state]:
+                localfails.append(filedate)
+                line = OrderedDict()
+                for item in headers:
+                    line[item] = None
+                line['State'] = state
+                line['filedate'] = filedate
+                for item in goodvariants:
+                    line[item] = 0
+                line['mytotal'] = 0
+                masterdict[state][filedate] = line
+        if len(localfails) > 0:
+            print(f"Added backdated entries for {state}: {' ... '.join(localfails)}")
+     	 
     
     for state in masterdict:
         for mydate in masterdict[state]:
