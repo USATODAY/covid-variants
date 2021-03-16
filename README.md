@@ -88,6 +88,11 @@ Some sample code for parsing the JSON:
                     line['mytotal'] = 0
                     for item in row:
                         line[item] = row[item]
+                        if item in goodvariants and isinstance(line[item], str):    # Force string to numbers
+                            if len(line[item]) == 0:
+                                line[item] = 0
+                            else:
+                                line[item] = int(line[item])
                         if item in goodvariants and not line[item]:   # If we're supplied with null -> None, drop in 0
                             line[item] = 0
                     for goodvariant in goodvariants:
