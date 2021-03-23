@@ -78,7 +78,7 @@ Some sample code for parsing the JSON:
                 line = OrderedDict()
                 row = clean_entry(entry)
                 state = row['State']
-                if state not in [None, "Total"]:
+                if state not in [None, "Total", ""]:
                     for item in headers:
                         line[item] = None
                     line["filedate"] = filedate    # and we're done initializing the row, maybe
