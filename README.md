@@ -1,4 +1,9 @@
 
+# DEFUNCT PROJECT
+## The CDC killed this data source
+In mid-April 2021, the Centers for Disease Control killed off the data source. The one they're referring us to doesn't have easily downloadable data and isn't updated nearly as frequently. Details: https://www.cdc.gov/coronavirus/2019-ncov/transmission/variant-cases.html
+
+
 # Coronavirus variant data
 
 This repository of state-level COVID-19 / coronavirus variants  contains data originally sourced from the Centers for Disease Control and Prevention. A few of the earlier files were pulled through the Wayback Machine. A few of the earlier files were altered to make them easier to parse.
